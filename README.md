@@ -1,2 +1,2 @@
 # Travel-Guru
- Travel Planner
+ A Travel Planner website.

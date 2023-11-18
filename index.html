@@ -2,37 +2,223 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Itinerary Planner</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Go Trip</title>
 </head>
 
 <body>
-
-    <header>
-        <h1>Travel Itinerary Planner</h1>
-    </header>
-
-    <section id="dashboard">
-        <!-- Dashboard content goes here -->
+    <section class="nav-bar">
+        <div class="logo">Plan The Itinerary</div>
+        <ul class="menu">
+            <li><a href="#">home</a></li>
+            <li><a href="#">tours</a></li>
+            <li><a href="#">package</a></li>
+            <li><a href="#">about us</a></li>
+            <li><a href="#">contact us</a></li>
+        </ul>
+        </div>
     </section>
 
-    <section id="itinerary">
-        <!-- Itinerary creation form goes here -->
+
+    <section class="banner">
+        <div class="banner-text-item">
+
+            <div class="banner-heading">
+                <h1>Find your Next tour!</h1>
+            </div>
+
+            <form class="form" id="tourForm">
+                <input type="text" list="mylist" placeholder="Destination" id="destinationInput">
+                <datalist id="mylist">
+                    <option>London</option>
+                    <option>Canada</option>
+                    <option>Monaco</option>
+                    <option>France</option>
+                    <option>Japan</option>
+                    <option>Switzerland</option>
+                    <option>Seoul</option>
+                </datalist>
+                <input type="date" class="date" id="dateInput">
+                <input type="text" class="activity" placeholder="Budget" id="budgetInput">
+
+                <!-- <input type="text" placeholder="Select Activities" id="activitiesInput"> -->
+
+                <select id="activitiesInput" multiple>
+                    <option value="Hiking">Hiking</option>
+                    <option value="Camping">Camping</option>
+                    <option value="Cycling">Cycling</option>
+                    <option value="Kayaking">Kayaking</option>
+                    <option value="RockClimbing">Rock Climbing</option>
+                    <option value="BirdWatching">Bird Watching</option>
+                    <option value="Fishing">Fishing</option>
+                    <option value="Picnicking">Picnicking</option>
+                    <option value="HorsebackRiding">Horseback Riding</option>
+                    <option value="Geocaching">Geocaching</option>
+                </select>
+
+                <a href="#" class="book" id="bookLink" role="button">BOOK</a>
+
+
+                <script>
+                    var bookLink = document.getElementById("bookLink");
+
+                    bookLink.addEventListener("click", function (event) {
+                        event.preventDefault();
+                        var destination = document.getElementById("destinationInput").value;
+                        var date = document.getElementById("dateInput").value;
+                        var budget = document.getElementById("budgetInput").value;
+                        var activities = document.getElementById("activitiesInput").value;
+                        var url = `indexIte.html?destination=${encodeURIComponent(destination)}&date=${encodeURIComponent(date)}&budget=${encodeURIComponent(budget)}&activities=${encodeURIComponent(activities)}`;
+                        window.location.href = url;
+                    });
+                </script>
+
+
+            </form>
+        </div>
     </section>
 
-    <section id="accommodation">
-        <!-- Accommodation information goes here -->
+
+    <section class="places">
+
+        <div class="places-text">
+            <h2>TOP DESTINATIONS</h2>
+        </div>
+
+
+        <div class="cards">
+            <div class="card">
+                <div class="zoom-img">
+                    <div class="img-card">
+                        <img
+                            src="https://res.cloudinary.com/dxssqb6l8/image/upload/v1605293736/james-wheeler_xqmq2y.jpg">
+                    </div>
+                </div>
+                <div class="text">
+                    <span class="rating">Vancouver, Canada</span>
+                    <h2>The Dark Forest Adventure</h2>
+
+                    <div class="card-box">
+                        <p class="time">🕓 3 Days</p>
+                        <p class="location">✈ Vancouver, Canada</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="zoom-img">
+                    <div class="img-card">
+                        <img src="https://res.cloudinary.com/dxssqb6l8/image/upload/v1605293755/paris_uj8wum.jpg">
+                    </div>
+                </div>
+                <div class="text">
+                    <span class="rating">Paris, France</span>
+                    <h2>The Dark Forest Adventure</h2>
+                    <div class="card-box">
+                        <p class="time">🕓 3 Days</p>
+                        <p class="location">✈ Paris, France</p>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="card">
+                <div class="zoom-img">
+                    <div class="img-card">
+                        <img src="https://res.cloudinary.com/dxssqb6l8/image/upload/v1605293955/monaco_usu7xb.jpg">
+                    </div>
+                </div>
+                <div class="text">
+                    <span class="rating">Monaco, Monaco</span>
+                    <h2>The Dark Forest Adventure</h2>
+                    <div class="card-box">
+                        <p class="location">✈ Monaco, Monaco</p>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="card">
+                <div class="zoom-img">
+                    <div class="img-card">
+                        <img src="https://res.cloudinary.com/dxssqb6l8/image/upload/v1605293874/switzerland_tubxcm.jpg">
+                    </div>
+                </div>
+                <div class="text">
+                    <span class="rating">Bern, Switzerland</span>
+                    <h2>The Dark Forest Adventure</h2>
+                    <div class="card-box">
+                        <p class="time">🕓 3 Days</p>
+                        <p class="location">✈ Bern, Switzerland</p>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="card">
+                <div class="zoom-img">
+                    <div class="img-card">
+                        <img src="https://res.cloudinary.com/dxssqb6l8/image/upload/v1605293673/korea_bxrcj5.jpg">
+                    </div>
+                </div>
+                <div class="text">
+                    <span class="rating">Seoul, South Korea</span>
+                    <h2>The Dark Forest Adventure</h2>
+                    <div class="card-box">
+                        <p class="time">🕓 3 Days</p>
+                        <p class="location">✈ Seoul, South Korea</p>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="card">
+                <div class="zoom-img">
+                    <div class="img-card">
+                        <img
+                            src="https://res.cloudinary.com/dxssqb6l8/image/upload/v1605293673/night-4336403_1920_demehp.jpg">
+                    </div>
+                </div>
+                <div class="text">
+                    <span class="rating">Tokyo, japan</span>
+                    <h2>The Dark Forest Adventure</h2>
+                    <div class="card-box">
+                        <p class="time">🕓 3 Days</p>
+                        <p class="location">✈ Tokyo, japan</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
     </section>
 
-    <!-- Include other sections for activities, dining, etc. -->
 
-    <footer>
-        <p>&copy; 2023 Travel Planner App</p>
-    </footer>
+    <div class="footer">
+        <div class="links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li>Offers & Discounts</li>
+                <li>Get Coupon</li>
+                <li>Contact Us</li>
+                <li>About</li>
+            </ul>
+        </div>
+        <div class="links">
+            <h3>Support</h3>
+            <ul>
+                <li>Frequently Asked Questions</li>
+                <li>Report a Payment Issue</li>
+                <li>Terms & Conditions</li>
+                <li>Privacy Policy</li>
+            </ul>
+        </div>
+    </div>
 
-    <script src="app.js"></script>
 </body>
 
 </html>
